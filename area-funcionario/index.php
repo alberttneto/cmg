@@ -425,8 +425,14 @@
                                 $estado = htmlspecialchars($row['estado']);
                                 $data_contrato = htmlspecialchars($row['data_contrato']);
                                 $salario = htmlspecialchars($row['salario']);
-                                $crm = htmlspecialchars($row['crm']);
-                                $especialidade = htmlspecialchars($row['especialidade']);
+
+                                if ($row['crm'] && $row['especialidade']){
+                                    $crm = htmlspecialchars($row['crm']);
+                                    $especialidade = htmlspecialchars($row['especialidade']);
+                                }else{
+                                    $crm = "";
+                                    $especialidade = "";
+                                }
                                 
                                 echo <<<HTML
                                     <tr>
